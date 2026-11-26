@@ -107,7 +107,7 @@ These recommendations are proposed opportunities based on observed ride patterns
 
 Explore the interactive Looker Studio dashboard:
 
-**[View Cyclistic Dashboard]https://datastudio.google.com/reporting/80b1cea4-4b84-440b-a8dd-93ec5a39c4c7**
+**[View Cyclistic Dashboard](https://datastudio.google.com/reporting/80b1cea4-4b84-440b-a8dd-93ec5a39c4c7)**
 
 The dashboard includes rider type and month filters to explore differences in riding behavior across the analysis period.
 
