@@ -42,7 +42,7 @@ The datasets were combined into a single analytical table before data cleaning a
 
 - **Google BigQuery:** Data storage, cleaning, transformation, and SQL analysis.
 - **SQL:** Data preparation, validation, and exploratory data analysis.
-- **Google Looker Studio:** Interactive dashboard development.
+- **Google Data Studio (Formerly Looker Studio):** Interactive dashboard development.
 - **GitHub:** SQL documentation and project versioning.
 
 ## 6. Data Preparation
@@ -107,7 +107,7 @@ These recommendations are proposed opportunities based on observed ride patterns
 
 Explore the interactive Looker Studio dashboard:
 
-**[View Cyclistic Dashboard](INSERT_YOUR_LOOKER_STUDIO_LINK)**
+**[View Cyclistic Dashboard]https://datastudio.google.com/reporting/80b1cea4-4b84-440b-a8dd-93ec5a39c4c7**
 
 The dashboard includes rider type and month filters to explore differences in riding behavior across the analysis period.
 
