@@ -1,147 +1,104 @@
 # Cyclistic Bike-Share Analysis
-### Understanding Rider Behavior to Increase Annual Memberships
 
-## 1. Project Overview
+## Project Overview
 
-This project analyzes Cyclistic bike-share usage patterns to understand how annual members and casual riders use the service differently.
+This project analyzes Cyclistic's bike-sharing data to identify differences in riding behavior between annual members and casual riders. The analysis aims to uncover usage patterns, understand customer behavior, and provide data-driven insights that can help Cyclistic develop strategies to convert casual riders into annual members.
 
-Using 12 months of historical ride data from November 2025 to October 2026, this analysis explores differences in riding behavior, including ride frequency, duration, time of usage, bike preferences, and station popularity.
+The project follows an end-to-end data analysis process, including data collection, data cleaning, data processing, exploratory data analysis (EDA), and data visualization.
 
-The ultimate goal is to identify opportunities to convert casual riders into annual members through data-driven business recommendations.
+## Business Task
 
-## 2. Business Problem
+Cyclistic wants to understand how annual members and casual riders use its bike-sharing services differently.
 
-Cyclistic aims to increase its annual membership base by converting existing casual riders into annual members.
-
-To support this objective, the marketing team needs to understand how casual riders and annual members differ in their usage patterns.
-
-The key business question is:
+The main business question is:
 
 **How do annual members and casual riders use Cyclistic bikes differently?**
 
-## 3. Business Objectives
+The findings will help the marketing team develop targeted strategies to encourage casual riders to purchase annual memberships.
 
-- Compare ride volumes between annual members and casual riders.
-- Identify differences in average ride duration.
-- Analyze riding patterns by day of the week and hour of the day.
-- Identify monthly usage trends.
-- Compare bike type preferences.
-- Identify the most popular starting and ending stations.
-- Develop data-driven recommendations to encourage casual riders to become annual members.
+## Tools & Technologies
 
-## 4. Dataset Description
+- **Google BigQuery:** Data storage, data cleaning, data processing, and SQL analysis.
+- **SQL:** Data transformation, aggregation, and exploratory data analysis.
+- **Google Data Studio (Formerly Looker):** Interactive dashboard development and data visualization.
+- **GitHub:** Project documentation and version control.
 
-The analysis uses 12 monthly Cyclistic bike-share datasets covering November 2025 through October 2026.
+## Data Analysis Process
 
-The datasets were combined into a single analytical table before data cleaning and exploratory analysis.
+### 1. Data Collection
 
-**Analysis period:** November 1, 2025 – October 31, 2026  
-**Final cleaned records:** 6,284,660 rides
+The analysis uses Cyclistic historical bike-sharing trip data. The datasets contain information about individual rides, including ride IDs, bike types, start and end timestamps, station information, geographic coordinates, and rider classifications.
 
-## 5. Tools & Technologies
+### 2. Data Cleaning & Preparation
 
-- **Google BigQuery:** Data storage, cleaning, transformation, and SQL analysis.
-- **SQL:** Data preparation, validation, and exploratory data analysis.
-- **Google Data Studio (Formerly Looker Studio):** Interactive dashboard development.
-- **GitHub:** SQL documentation and project versioning.
+The raw datasets were combined and processed using SQL in Google BigQuery.
 
-## 6. Data Preparation
+The preparation process included:
+- Combining monthly datasets.
+- Reviewing data types and data consistency.
+- Identifying and handling missing values.
+- Removing invalid or irrelevant records.
+- Creating additional columns to support further analysis.
 
-The data preparation process included:
+### 3. Data Analysis
 
-1. Combining 12 monthly datasets using SQL.
-2. Identifying and removing duplicate ride IDs.
-3. Excluding records with invalid timestamps.
-4. Excluding rides shorter than one second.
-5. Excluding rides longer than 24 hours based on the project's analytical criteria.
-6. Converting timestamps into the Chicago local timezone.
-7. Filtering records to the selected 12-month analysis period.
-8. Validating the cleaned dataset for completeness and consistency.
+SQL queries were used to explore differences between annual members and casual riders, focusing on:
 
-After cleaning, the final dataset contained **6,284,660 rides**.
+- Monthly riding patterns.
+- Daily riding behavior.
+- Hourly riding patterns.
+- Ride duration.
+- Bike type preferences.
+- Differences in usage between member and casual riders.
 
-## 7. Exploratory Data Analysis
+### 4. Data Visualization
 
-The analysis covered the following areas:
+The processed data was visualized using Google Data Studio to create an interactive dashboard that highlights key findings and riding behavior patterns.
 
-- Rider type distribution
-- Ride duration comparison
-- Weekly riding patterns
-- Hourly riding patterns
-- Monthly ride trends
-- Bike type preferences
-- Popular starting and ending stations
+## Dashboard Preview
 
-## 8. Key Findings
+**Explore the interactive dashboard by clicking the preview below.**
 
-| Metric | Result |
-|---|---:|
-| Total rides | 6,284,660 |
-| Member ride share | 64.47% |
-| Casual ride share | 35.53% |
-| Casual average ride duration | 17.44 minutes |
-| Member average ride duration | 11.87 minutes |
-| Casual weekend ride share | 36.65% |
-| Member weekend ride share | 23.30% |
+[![Cyclistic Dashboard Preview](images/dashboard_page_1.png)](https://datastudio.google.com/reporting/80b1cea4-4b84-440b-a8dd-93ec5a39c4c7)
 
-### Key Insights
+[![Cyclistic Dashboard - Page 2](images/dashboard_page_2.png)](https://datastudio.google.com/reporting/80b1cea4-4b84-440b-a8dd-93ec5a39c4c7)
 
-- Casual riders have longer average ride durations than annual members.
-- Casual riders account for a larger proportion of weekend rides.
-- Casual ride activity reaches its highest level during July.
-- Casual riders show a higher proportion of electric bike usage compared with annual members.
-- Popular casual rider stations are concentrated around waterfront and recreational destinations, while member activity is more concentrated around central urban areas.
+[**View Interactive Dashboard on Looker Studio →**](https://datastudio.google.com/reporting/80b1cea4-4b84-440b-a8dd-93ec5a39c4c7)
 
-## 9. Business Recommendations
-
-Based on the observed riding patterns:
-
-1. **Weekend Membership Campaigns:** Introduce targeted membership promotions during weekends when casual riding activity is relatively high.
-2. **Seasonal Marketing Campaigns:** Increase membership acquisition campaigns during warmer months when casual ride volumes increase.
-3. **Location-Based Promotions:** Focus promotional activities around stations popular among casual riders, particularly recreational and waterfront areas.
-4. **Electric Bike Membership Benefits:** Highlight the convenience and value of electric bike access in membership marketing.
-
-These recommendations are proposed opportunities based on observed ride patterns and should be further evaluated through campaign testing.
-
-## 10. Interactive Dashboard
-
-Explore the interactive Looker Studio dashboard:
-
-**[View Cyclistic Dashboard](https://datastudio.google.com/reporting/80b1cea4-4b84-440b-a8dd-93ec5a39c4c7)**
-
-The dashboard includes rider type and month filters to explore differences in riding behavior across the analysis period.
-
-## 11. SQL Queries
-
-All SQL scripts used throughout this project are available in the `sql/` directory.
-
-The scripts document the complete analytical workflow, from data combination and cleaning to exploratory analysis and dashboard preparation.
-
-## 12. Project Structure
+## Repository Structure
 
 ```text
 cyclistic-bike-share-analysis/
 │
 ├── README.md
 │
-├── sql/
-│   ├── 01_data_combination.sql
-│   ├── 02_data_cleaning.sql
-│   ├── 03_data_validation.sql
-│   ├── 04_rider_type_analysis.sql
-│   ├── 05_ride_duration_analysis.sql
-│   ├── 06_weekly_patterns.sql
-│   ├── 07_hourly_patterns.sql
-│   ├── 08_monthly_trends.sql
-│   ├── 09_bike_type_analysis.sql
-│   ├── 10_station_analysis.sql
-│   └── 11_visualization_table.sql
+├── images/
+│   ├── dashboard_page_1.png
+│   └── dashboard_page_2.png
 │
-└── images/
-    ├── dashboard_page_1.png
-    └── dashboard_page_2.png
+└── SQL/
+    ├── 01_data_combination.sql
+    ├── 02_data_cleaning.sql
+    ├── 03_data_exploration.sql
+    ├── ...
+    └── 11_visualization_table.sql
 ```
 
+## Key Findings
+
+The analysis explores how annual members and casual riders differ in their usage patterns, including their preferred riding days, hours, months, ride durations, and bike types.
+
+These insights provide a foundation for identifying opportunities to improve customer engagement and increase annual membership conversions.
+
+## Conclusion
+
+This project demonstrates an end-to-end data analytics workflow, from preparing raw datasets to analyzing customer behavior and presenting insights through an interactive dashboard.
+
+By understanding the differences between casual riders and annual members, Cyclistic can develop more targeted marketing strategies and make data-driven business decisions.
+
 ---
+
+**Project:** Cyclistic Bike-Share Analysis  
+**Tools:** SQL | Google BigQuery | Google Data Studio | GitHub
 
 *This project demonstrates an end-to-end data analytics workflow, including data preparation, SQL analysis, data visualization, and business recommendations.*
